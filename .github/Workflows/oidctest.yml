@@ -21,3 +21,4 @@ jobs:
             - name: Test OIDC authentication
               run: |
                 aws sts get-caller-identity
+//run after configuring the AWS credentials using OIDC authentication
