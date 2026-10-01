@@ -50,7 +50,7 @@ jobs:
           echo "web: java -jar *.jar" > eb-deployment/Procfile
       
       - name: upload application artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: streamflix-deployment
           path: eb-deployment/
