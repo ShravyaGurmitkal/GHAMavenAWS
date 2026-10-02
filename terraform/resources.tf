@@ -1,6 +1,6 @@
 data "aws_elastic_beanstalk_solution_stack" "java21" {
   most_recent = true
-  name_regex  = "^64bit Amazon Linux 2023 .* running corretto 21$"
+  name_regex  = "^64bit Amazon Linux 2023 .* running Corretto 21$"
 }
 
 data "aws_iam_policy_document" "ec2_assume_role" {
