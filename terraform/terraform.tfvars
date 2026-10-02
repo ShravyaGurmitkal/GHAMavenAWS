@@ -1,4 +1,4 @@
-aws_region = "ap-south-1"
+aws_region       = "ap-south-1"
 application_name = "streamflix"
 environment_name = "streamflix-dev"
-instance_type = "t3.micro"
+instance_type    = "t3.micro"
