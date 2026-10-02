@@ -119,13 +119,19 @@ jobs:
         working-directory: terraform
         run: terraform validate
       
-      # - name: Terraform plan
-      #   working-directory: terraform
-      #   run: terraform plan
+      - name: Terraform destroy plan
+        working-directory: terraform
+        run: |
+          terraform plan -destroy -out=destroy.tfplan
+          terraform apply destroy.tfplan
+
+      - name: Terraform plan
+        working-directory: terraform
+        run: terraform plan
       
-      # - name: Terraform apply
-      #   working-directory: terraform
-      #   run: terraform apply -auto-approve
+      - name: Terraform apply
+        working-directory: terraform
+        run: terraform apply -auto-approve
 
       # - name: Terraform destroy
       #   working-directory: terraform
