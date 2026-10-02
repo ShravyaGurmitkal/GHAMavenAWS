@@ -1,6 +1,6 @@
 data "aws_elastic_beanstalk_solution_stack" "java21" {
-  name_regex  = "^64bit Amazon Linux 2023 .* running corretto 21$"
   most_recent = true
+  name_regex  = "^64bit Amazon Linux 2023 .* running corretto 21$"
 }
 
 data "aws_iam_policy_document" "ec2_assume_role" {
@@ -92,6 +92,11 @@ resource "aws_elastic_beanstalk_environment" "streamflix_env" {
     name      = "PORT"
     value     = "8080"
   }
+}
+
+output "elastic_beanstalk_environment_url" {
+  description = "URL of the StreamFlix Elastic Beanstalk environment"
+  value       = "http://${aws_elastic_beanstalk_environment.streamflix_env.cname}"
 }
 
 output "application_name" {
