@@ -50,7 +50,7 @@ resource "aws_iam_role_policy_attachment" "beanstalk_role_policy_attachment" {
 
 resource "aws_iam_role_policy_attachment" "beanstalk_role_policy_attachment2" {
   role       = aws_iam_role.beanstalk_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRole"
+  policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy"
 }
 
 resource "aws_elastic_beanstalk_application" "streamflix" {
