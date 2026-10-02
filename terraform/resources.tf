@@ -25,7 +25,7 @@ resource "aws_iam_role_policy_attachment" "ec2_role_policy_attachment" {
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
     name = "${var.application_name}-ec2-instance-profile"
-    role = aws_iam_role.ec2_role  
+    role = aws_iam_role.ec2_role.name  
 }
 
 data "aws_iam_policy_document" "beanstalk_assume_role" {
@@ -45,7 +45,7 @@ resource "aws_iam_role" "beanstalk_role" {
 
 resource "aws_iam_role_policy_attachment" "beanstalk_role_policy_attachment" {
   role = aws_iam_role.beanstalk_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkEnhancedHealth"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth"
 }
 
 resource "aws_iam_role_policy_attachment" "beanstalk_role_policy_attachment2" {
