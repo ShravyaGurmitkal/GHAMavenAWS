@@ -119,15 +119,14 @@ jobs:
         working-directory: terraform
         run: terraform validate
       
-      - name: Terraform plan
-        working-directory: terraform
-        run: terraform plan
+      # - name: Terraform plan
+      #   working-directory: terraform
+      #   run: terraform plan
       
-      - name: Terraform apply
-        working-directory: terraform
-        run: terraform apply -auto-approve
+      # - name: Terraform apply
+      #   working-directory: terraform
+      #   run: terraform apply -auto-approve
 
       - name: Terraform destroy
         working-directory: terraform
-        if: ${{ github.event.inputs.destroy == 'true' }}
         run: terraform destroy -auto-approve
