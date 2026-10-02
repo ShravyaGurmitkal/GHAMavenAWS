@@ -113,7 +113,7 @@ jobs:
 
       - name: Terraform Format Check
         working-directory: terraform
-        run: terraform fmt -check
+        run: terraform fmt -diff
       
       - name: Terraform validate
         working-directory: terraform
